@@ -47,7 +47,7 @@ test:
     - pytest -vv tests/unit
 
 about:
-  home: https://github.com/googleapis/googleapis
+  home: https://cloud.google.com/iam
   license: Apache-2.0
   license_file: LICENSE
   license_family: APACHE
@@ -55,7 +55,7 @@ about:
   description: |
     grpc-google-iam-v1 is the IDL-derived library for the
     google-iam v1 service in the googleapis repository.
-  doc_url: https://github.com/googleapis/googleapis
+  doc_url: https://cloud.google.com/python/docs/reference/grpc-iam/latest
   dev_url: https://github.com/googleapis/googleapis/tree/master/google/iam/v1
 
 extra:
