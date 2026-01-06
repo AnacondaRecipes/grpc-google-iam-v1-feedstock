@@ -53,7 +53,7 @@ about:
     grpc-google-iam-v1 is the IDL-derived library for the
     google-iam v1 service in the googleapis repository.
   doc_url: https://cloud.google.com/python/docs/reference/grpc-iam/latest
-  dev_url: https://github.com/googleapis/google-cloud-python/tree/main/packages/grpc-google-iam-v1
+  dev_url: https://github.com/googleapis/google-cloud-python
 
 extra:
   recipe-maintainers:
