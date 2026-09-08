@@ -1,5 +1,5 @@
 {% set name = "grpc-google-iam-v1" %}
-{% set version = "0.14.3" %}
+{% set version = "0.14.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
-  sha256: 879ac4ef33136c5491a6300e27575a9ec760f6cdf9a2518798c1b8977a5dc389
+  sha256: 07fd3a9fafb586588e771831fbfc8f6597050181d0c3b45e039d18b8fdc1aab5
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  skip: true  # [py<37]
+  skip: true  # [py<310]
 
 requirements:
   host:
@@ -22,10 +22,10 @@ requirements:
     - wheel
   run:
     - python
-    - grpcio >=1.44.0,<2.0.0
-    - googleapis-common-protos >=1.56.0,<2.0.0
+    - grpcio >={{ libgrpc }}.0,<2.0.0
+    - googleapis-common-protos >=1.69.2,<2.0.0
     - googleapis-common-protos-grpc
-    - protobuf >=3.20.2,<7.0.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5
+    - protobuf {{ libprotobuf }}
 
 test:
   requires:
@@ -59,3 +59,5 @@ extra:
   recipe-maintainers:
     - BrentDorsey
     - xylar
+  skip-lints:
+    - cbc_dep_in_run_missing_from_host
